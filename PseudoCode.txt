@@ -1,0 +1,95 @@
+\\ Module principal
+DÉBUT
+	NOMBRES =[[18,25],[29.13],[-2,15],[66,44]]
+	NBPLUSG =0
+	pour i=1 jusqu'à 4 faire
+		pour j=1 jusqu'à 2 faire
+			si NOMBRES[i][j] > NBPLUSG alors
+				NBPLUSG = NOMBRES[i][j]
+			finsi
+		finpour
+	finpour
+	ecrire NBPLUSG
+FIN           
+
+\\ Module principal
+DÉBUT
+	PRENOM= [["David", "Justine", "Valentin","Axel", "Redouane"], ["Julie", "Stéphane", "Mostapha", "Claudiu", "Son"]]
+	pour i=1 jusqu'à 2 faire
+		pour j=1 jusqu'à 5 faire
+			si i = 1 alors
+				ecrire PRENOM[i][j], "est dans turing"
+			sinon 
+				ecrire PRENOM[i][j], "est dans lovelace"
+			finsi
+		finpour
+	finpour
+FIN           
+\\ Module auxiliaire PCC
+ENTRER PRENOM, COMPET, CLASSE
+ecrire PRENOM , " est dans la classe ", CLASSE , " et connait : " 
+	pour i=1 jusqu'à compter(COMPET) faire
+	ecrire COMPET[i]
+	finpour
+
+RETOURNER
+//JUSTEPRIX2 
+
+\\ Module principal
+DÉBUT
+    PRIX = ALÉATOIRE(10,50)
+    PP = 0
+    RES = 0
+    tantque RES = 0 et PP <= 11 faire
+        ecrire "entrez le prix a deviner"
+            lire NB
+            RES= JUSTEPRIX (PRIX, NB)
+            PP = PP +1
+        si PP = 10 alors
+            ecrire "PERDU"
+            RES = 1
+        FINSI
+        fintantque
+    
+FIN             
+
+\\ Module auxiliaire JUSTEPRIX
+ENTRER PRIX, NB
+
+GG = 0
+
+                 Si PRIX < NB alors
+                          ecrire "C'est moins"
+                          GG = 0
+                 sinon si PRIX > NB alors
+                          ecrire "C'est plus"
+                          GG = 0
+                 sinon 
+                          ecrire "GAGNER"
+                          GG = 1
+                 finsi
+
+RETOURNER GG
+
+\\ Module principal
+DÉBUT
+        tri = [454, 4, 59, 68, 1, 0, -1 , 56 , 7 , 9]
+        DEP = 0
+        pour i = 1 jusqu'à compter(tri)-1 faire
+        	pour j= 1 jusqu'à compter(tri)-i faire
+	                 si tri[i] > tri[j+i] alors
+	                          DEP = tri[i]
+	                          tri[i]= tri[i+j]
+	                          tri[i+j]= DEP
+	                 finsi
+	        finpour
+        finpour
+        ecrire tri      
+FIN             
+
+
+
+ENTRER 
+
+
+RETOURNER
